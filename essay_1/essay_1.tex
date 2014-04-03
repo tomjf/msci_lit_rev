@@ -1,0 +1,543 @@
+
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+
+\usepackage{geometry} % Required to change the page size to A4
+\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+
+\usepackage{bm}
+
+\usepackage{amsmath}
+
+\linespread{1.2} % Line spacing
+
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+
+\setlength\parindent{0pt}
+
+\bibliographystyle{unsrt}  
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+
+
+\textsc{\LARGE Perturbed Universes}\\[0.5cm] % Major heading such as course name
+\textsc{\Large Literature Review}\\[0.5cm] % Minor heading such as course title
+
+\textsc{\large Imperial College}\\[1.5cm] % Name of your university/college
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Thomas \textsc{Fletcher} % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Prof. Jo\~{a}o  \textsc{Magueijo} % Supervisor's Name
+\end{flushright}
+\end{minipage}\\[4cm]
+
+{\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
+
+%\includegraphics{Logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Include a table of contents
+
+\newpage % Begins the essay on a new page instead of on the same page as the table of contents 
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{Introduction} % Major section
+
+The formation of large scale structure is one of the largest unsolved problems in modern Cosmology. Surveys such as the Sloane Digital Sky Survey and the Two-degree-Field Galaxy Redshift Survey show that the Universe has structure on large scales in addition to the detailed structure seen in galaxies. To investigate how such structure formed out of an isotropic and homogeneous Universe, perturbations can be made to cosmological models. Therefore, it is worth reviewing the background to these models and their solutions first.
+
+%----------------------------------------------------------------------------------------
+%	Theory
+%----------------------------------------------------------------------------------------
+
+\section{History and Background}
+
+\subsection{Cosmological Principle}
+
+One of the most fundamental features of the Universe is that it is homogeneous and isotropic on large scales, as stated by the Cosmological Principle\cite{coles}. Although inhomogeneities appear on smaller scales, with galaxies and galaxy clusters, if sufficiently large regions are taken ($\sim 100 Mpc$)\cite{mukhanov}, inhomogeneities average out and the Cosmological Principle holds. \\
+
+The Cosmological Principle is important because it implies that the laws of physics that hold in our portion of the Universe are applicable to the rest of the Universe and can therefore be used to test cosmological models.\\
+
+Modern observations such as the uniformity of the temperature in the Cosmic Microwave Background (CMB), within a few parts in $10^5 K$, show that the large scale properties of the Universe are highly symmetric and therefore provide evidence that the Universe is isotropic. When this is combined with the Copernican Principle (that Earth is not in some special place in the Universe) the homogeneity required by the Cosmological Principle also follows. %However, when Einstein first introduced the idea there was no such observational evidence. He was influenced by Mach's Principle, the idea that physical laws are roughly set by the large-scale distribution of matter. He therefore proposed the Cosmological Principle, as a simple well defined global structure for the Universe would lead to well defined local physical behavior. The idea eventually lead to the proposition of the Perfect Cosmological Principle which stated that the Universe is the same everywhere, in all directions and times, although this was ruled out when the CMB and evidence for the Big Bang was discovered. \\
+
+\subsection{Hubble's Law Scale Factor}
+
+In 1929 Hubble proposed, from observations, that there is a linear relationship between the distance separating galaxies $r$ and the recessional velocities $v$ between them, showing the Universe is expanding.
+
+\begin{equation}\label{hubblelaw}
+v = H(t) r
+\end{equation}
+
+Where $H(t)$ is the Hubble parameter. It is useful to define comoving coordinates $x$ that scale with the expansion of the Universe (under the scale factor $a(t)$), therefore remaining constant.
+
+\begin{equation}\label{radius}
+r(t) = a(t)x
+\end{equation}
+
+Where $r(t)$ is the distance between two observers.
+
+\section{Newtonian Cosmology}
+
+The equations that govern the evolution of a homogeneous and isotropic Universe, the Friedmann equations, can be derived using a Newtonian approach although some insight from General Relativity (GR) in the form of Birkhoff's Theorem is required.\\
+
+A homogeneous, isotropic, infinite and expanding Universe with energy density $\rho$ is considered\cite{mukhanov}. Matter is gravitationally self attractive causing the expansion of the Universe to decelerate and therefore for the acceleration of the scale factor to decrease over time.  To find an equation of motion for the scale factor an arbitrary point is taken as the centre of an expanding sphere within the Universe, with radius $r(t)=a(t)x$, and the forces on a test particle of mass $m$ on the edge of this sphere are considered\cite{pritchard}.\\
+
+Birkhoff's theorem states that the net gravitational effect of a uniform medium on a spherical cavity is zero. This means the only gravitational force acting on the test particle comes from the mass of the sphere to its interior\cite{cambridge}. The total energy of the test particle can then be written as the sum of its gravitational potential and kinetic energy as in equation \ref{newtonian}.
+
+\begin{equation}\label{newtonian}
+U = T + V = \frac{1}{2}m\dot r^2 -\frac{4\pi}{3}G r^2 \rho m
+\end{equation}
+
+Where the fact mass of the sphere interior to the test mass is $M=\frac{4}{3}\pi r^3 \rho$ and $G$ is the gravitational constant. It is assumed the sphere expands homogeneously so that the test mass is comoving with the expansion ($r(t) \propto a(t)$). This leads to equation \ref{subbed}.
+
+\begin{equation}\label{subbed}
+U = \frac{1}{2}m\dot a^2 x^2 -\frac{4\pi}{3}G a^2 x^2 \rho m 
+\end{equation}
+
+Rearranging equation \ref{subbed} leads to the Friedmann equation.
+
+\begin{equation}\label{friedmann}
+\left( \frac{\dot a}{a} \right) ^2 = \frac{8\pi G}{3}\rho - \frac{k c^2}{a^2}
+\end{equation}
+
+Where we have defined $k$ as in the equation below.
+
+\begin{equation}\label{k}
+k c^2 = \frac{2U}{m x^2}
+\end{equation}
+
+It can be seen from equation \ref{subbed} that $U \propto x^2$. None of the other terms in equation \ref{k} depend on the comoving coordinates so $k$ must be independent of  $ x^2$. In addition conservation of energy enforces that $U$ is constant and by definition the comoving coordinates are fixed ($\dot x = 0$). This means that $k$ is neither a function of space or time and remains constant throughout the evolution of the Universe. \\
+
+In fact the derivation of the Friedmann equation is almost identical to the conservation of energy equation for a rocket launched from Earth at speed $\dot a$ \cite{carlo}. This can be seen in equation \ref{subbed} and \ref{newtonian}. In the rocket example, escape from the Earth's gravitational field occurs if the kinetic energy exceeds the gravitational potential exerted by the Earth and $U>0$. The rocket reaches geostationary orbit if the two forces are exactly balanced ($U = 0$) or the rocket falls back to Earth if the gravitational potential energy is greater than the kinetic energy ($U<0$) \cite{mukhanov}.\\
+
+As mentioned above each expanding Universe has a constant value of $k$. This value determines the ultimate fate of the Universe and can be explained in a similar way as the rocket example. A positive $k$ gives a negative $U$, $V>T$ and the expanding Universe eventually slows down and collapses back in on itself. A negative $k$ implies a positive $U$, therefore $T>V$ and the Universe continues expanding forever. If $k = 0$ then $U = 0$ and the expansion slows down tending towards $a=0$ at $t=\infty$.\\
+
+The Friedmann equation can also be written in terms of the Hubble parameter. Equations \ref{hubblelaw} and \ref{radius} can be used to form an expression that relates the Hubble parameter to the scale factor and its derivative at that time.
+
+\begin{equation}\label{hubblevec}
+\bm{v} = \frac{|\bm{\dot r}|}{|\bm{r}|}\bm{r} = \frac{\dot a}{a}\bm{r} = H \bm{r}
+\end{equation}
+
+\begin{equation}\label{hubblescale}
+H = \frac{\dot a}{a}
+\end{equation}
+
+Equation \ref{hubblescale} can then be used to write the Friedmann equation in terms of the Hubble parameter $H(t)$.
+
+\begin{equation}\label{friedmannhubble}
+H^2 =  \frac{8\pi G}{3}\rho - \frac{k c^2}{a^2} 
+\end{equation}
+
+Similar to the rocket problem, equation \ref{friedmannhubble} allows the cut off point between continuous expansion and a Big Crunch for the Universe to be found by setting the energy to zero, therefore $k=0$. Rearranging equation \ref{friedmannhubble}, a critical density $\rho_{c}$ can be found, which will give a flat Universe.\\
+
+\begin{equation}
+\rho_{c} = \frac{3H^2}{8\pi G}
+\end{equation}
+
+In order to calculate the time evolution of the scale factor in equation \ref{friedmann} an equation for the evolution of the density $\rho(t)$ is required. This can be formulated from Fundamental equation from Thermodynamics for a closed system\cite{cambridge}.
+
+\begin{equation}\label{fundamental}
+dE = TdS - pdV
+\end{equation}
+
+Where $dE$ is the total change in energy of the system, $T$ is the temperature, $dS$ is the change in entropy, $p$ is the pressure and $dV$ is the change in volume. Equation \ref{fundamental} can be applied to an expanding spherical volume of unit comoving radius with density $\rho$. Using $E=mc^2$ an equation for the energy of such a system can be obtained.
+
+\begin{equation}\label{energysphere}
+E = \frac{4\pi}{3}\rho a^3 c^2
+\end{equation}
+
+Differentiating with respect to time gives an expression for the time evolution of the total energy.
+
+\begin{equation}\label{dedt}
+\frac{dE}{dt} = \frac{4\pi}{3} \frac{d\rho}{dt}a^3 c^2 + 4\pi\rho \frac{da}{dt}a^2 c^2
+\end{equation}
+
+Similarly an expression for the change in volume with time can be found by differentiating the volume of the sphere ($V = \frac{4\pi}{3}a^3$).
+
+\begin{equation}\label{dvdt}
+\frac{dV}{dt} = 4\pi a^2 \frac{da}{dt}
+\end{equation}
+
+The expansion of the sphere is assumed to be reversible ($dS = 0$). Substituting equations \ref{dedt} and \ref{dvdt} into the fundamental equation leads to the following.
+
+\begin{equation}\label{subbedfundamental}
+\frac{4\pi}{3} \dot \rho a^3 c^2 + 4\pi\rho \dot a a^2 c^2 = - p 4\pi a^2 \dot a
+\end{equation}
+
+Cancelling common terms and rearranging equation \ref{subbedfundamental} leads to the Continuity equation.
+
+\begin{equation}\label{continuity}
+\dot \rho = 3\frac{ \dot a}{a}(\rho +\frac{p}{c^2})
+\end{equation}
+
+
+An equation for the acceleration of the Universe ($\ddot a$) can now be found by differentiating the Friedmann equation with respect to time, which gives the following.
+
+\begin{equation}\label{diffsubbed}
+\frac{d}{dt} \left( \frac{\dot a ^2}{a ^2} \right) = \frac{2 \ddot a \dot a}{a^2} - \frac{2 \dot a \dot a^2}{a^2} = 2 \frac{\dot a}{a} \frac{a \ddot a - \dot a ^2}{a^2} = \frac{8\pi G}{3} \dot \rho + \frac{2k c^2}{a^3} \dot a
+\end{equation} 
+
+Substituting the Continuity equation into the final equality of equation \ref{diffsubbed} leads to equation \ref{diffrearranged}.
+
+\begin{equation}\label{diffrearranged}
+\frac{\ddot a}{a} - \left( \frac{\dot a}{a} \right)^2 = -4\pi G \left(\rho +\frac{p}{c^2} \right) + \frac{kc^2}{a^2}
+\end{equation}
+
+The Friedmann equation can be used to simplify equation \ref{diffrearranged} to give the Acceleration Equation\cite{cambridge}.
+
+\begin{equation}\label{acceleration}
+\frac{\ddot a}{a} =  -\frac{4\pi G}{3} \left( \rho +3\frac{p}{c^2} \right)
+\end{equation}
+
+\section{Relativistic Cosmology}
+
+Although Newtonian Gravity and some hand-waving arguments have been used to derive equations that govern the evolution of the Universe, the most mathematically complete picture is given using Einstein's theory of General Relativity. Einstein's theory states that the geometry of space-time is dynamic and determined by the matter distribution in the Universe (transforming gravity from a force to a property of spacetime)\cite{coles}. It can also deal with particles moving at relativistic velocities\cite{mukhanov}.
+
+\subsection{Geometry}
+
+The most fundamental element of GR is the metric which encodes the distance between two points on the spacetime manifold\cite{carlo}. This metric must describe a homogeneous and isotropic Universe as set out by the Cosmological Principle. Meaning the Universe must be the same at every point and the Universe must look the same from any given point\cite{carlo}. \\
+
+These conditions mean the evolution of the Universe must be represented as a time ordered series of 3D hypersurfaces. Homogeneity and isotropy require the greatest symmetry from these hypersurfaces, requiring three translational and three rotational symmetries\cite{mukhanov}. It is impossible to visualise these manifolds as they exist in spacetime (3+1) dimensions. It is easier to first consider analogous 2D surfaces that satisfy homogeneity and isotropy. It is obvious that the infinite flat plain and the 2-sphere both have no special points and look the same at every point on their surfaces. In addition the hyperbolic paraboloid (saddle) shares these properties\cite{pritchard}.\\
+
+In spacetime the same manifolds satisfy homogeneity and isotropy but are now promoted by one more dimension and form "3D surfaces", they are listed below.
+
+\begin{itemize}
+  \item 3D flat space
+  \item 3D sphere of constant positive curvature (three-sphere)
+  \item 3D space with constant negative curvature (three-hyperboloid)
+\end{itemize} 
+
+The spatial part of the metric for these manifolds can be found by considering the proper distance between two points on a sphere in spherical polar coordinates. The spacetime metric is then completed by the inclusion of time ($cdt$)\cite{cambridge}. This eventually leads to the Friedmann-Robertson-Walker (FRW) metric which is the most general metric for a homogeneous, isotropic and expanding spacetime.
+
+\begin{equation}\label{RWmetric}
+ds^2 = (cdt)^2 - a(t)^2 \left[ \frac{dr^2}{1-k r^2} + r^2(d\theta^2 + \sin^2 \theta d\phi ^2)\right]
+\end{equation}
+
+The constant $k$ in equation \ref{RWmetric} changes dependent on which of the spacetime manifolds is being considered and it describes the curvature of the manifold. With $k=0$ the metric represents flat spacetime and appears to be the same as Minkowski spacetime with the space part scaled by the scale factor. In addition the Universe is infinitely large. This manifold is the most relevant as the WMAP measurements have shown that the Universe is very close to flat. $k>0$ is a finite Universe with positive curvature and has the form of a three-sphere. Finally with $k<0$ the manifold takes the form of the three-hyperboloid, the Universe is infinitely large and has negative curvature.
+
+\subsection{Einstein Equations and Friedmann Equations}
+
+The FRW metric can be written with a metric tensor in a more general form using Einstein summation notation.
+
+\begin{equation}\label{metric}
+ds^2 = g_{\alpha \beta}dx^\alpha dx^\beta
+\end{equation}
+
+Where the metric tensor ($g_{\alpha \beta}$) contains all the information about the spacetime geometry and only has diagonal elements.
+\begin{equation}
+g_{\alpha \beta} =
+ \begin{pmatrix}
+  1 & 0 & 0 & 0 \\
+  0 & -\frac{a^2}{1-k r^2} & 0 & 0 \\
+  0  & 0  & -a^2 r^2 & 0  \\
+  0 & 0 & 0 & -a^2 r^2 \sin^2 \theta
+ \end{pmatrix}
+ \end{equation}
+
+To investigate the evolution of the Universe the evolution of the scale factor needs to be calculated. This requires knowlege of how the FRW metric changes with time. This is  described by the Einstein Field Equations as shown in equation \ref{EFE}.
+
+\begin{equation}\label{EFE}
+G_{\alpha \beta} = \frac{8 \pi G}{c^4}T_{\alpha \beta}
+\end{equation}
+
+Where $T_{\alpha \beta}$ is the energy-momentum tensor for a perfect fluid. It describes the density and flux of energy and momentum in spacetime. $G_{\alpha \beta}$ is the Einstein Tensor which encodes information about the curvature of the Universe. It can be written in terms of the Ricci Tensor ($R_{\alpha \beta}$), Ricci Scalar ($R$) and the metric tensor ($g_{\alpha \beta}$)\cite{coles}.
+
+\begin{equation}\label{ricci}
+G_{\alpha \beta} = R_{\alpha \beta} - \frac{1}{2} g_{\alpha \beta} R
+\end{equation}
+
+Substituting equation \ref{ricci} into equation \ref{EFE} allows the Einstein equations to be rewritten.
+
+\begin{equation}
+R_{\alpha \beta} - \frac{1}{2} g_{\alpha \beta} R = \frac{8 \pi G}{c^4}T_{\alpha \beta}
+\end{equation}
+
+A complicated derivation can be used to find the $G_{00}$ and $G_{11}$ components of the Einstein Tensor, only the result is shown here.
+
+\begin{equation}
+G_{00} = \frac{3}{(ca)^2}\left(\dot a^2 +k c^2\right)
+\end{equation}
+
+\begin{equation}
+G_{11} = -\frac{1}{c^2} \frac{\left(2 a \ddot a + \dot a^2 +k \right)}{1-k r^2}
+\end{equation}
+
+For comoving observers the time-time ($T_{00}$) and space-space components ($T_{11}$) of the energy-momentum tensor are as below.
+
+\begin{equation}
+T_{00} = \rho c^2
+\end{equation}
+
+\begin{equation}
+T_{11} = \frac{\rho a^2}{1-k r^2}
+\end{equation}
+
+Equating $G_{00}$ with $T_{00}$ and $G_{11}$ with $T_{11}$ and using the relationship described by equation \ref{EFE} leads to equations \ref{fried1} and \ref{fried2} respectively, which are the Friedmann equations.
+
+\begin{equation}\label{fried1}
+\left(\frac{\dot a}{a}\right)^2 +\frac{k c^2}{a^2} = \frac{8 \pi}{3}G \rho
+\end{equation}
+
+\begin{equation}\label{fried2}
+2\frac{\ddot a}{a} + \left(\frac{\dot a}{a}\right)^2 + \frac{k c^2}{a^2} = -\frac{8\pi}{c^2}G \rho
+\end{equation}
+
+Equation \ref{fried1} shows the scale factor increases with increasing mass density $\rho$. Equation \ref{fried1} can be used to reproduce the same acceleration equation that was produced using the Newtonian approach (\ref{acceleration}).
+
+\begin{equation}\label{accfinal}
+\frac{\ddot a}{a} =  -\frac{4\pi G}{3} \left( \rho +3\frac{p}{c^2} \right)
+\end{equation}
+
+This shows that the acceleration of expansion decreases with increasing pressure and energy densities for mass and radiation. A relationship between the curvature $k$ and the present day density parameter ($\Omega_{0} = \rho_{0}/\rho_{c}$), Hubble parameter ($H_{0}$) and scale factor ($a_{0}$) can be found from equation \ref{fried1}
+
+\begin{equation}
+k c^2 = H_{0}^2 a_{0}^2(\Omega_{0}-1)
+\end{equation}
+
+This is the same result as the Newtonian derivation where the outcome of the Universe depends on whether there is overcritical density ($\Omega_{0}>1$), critical density ($\Omega_{0}=1$) or sub-critical density ($\Omega_{0} <1$) corresponding to $k = +1,0,-1$ respectively. However GR shows the true meaning of $k$ that it is related to the curvature of the Universe rather than a parameter related to the total energy of the Universe.
+
+
+\subsection{Cosmological Constant}
+
+When Einstein formulated GR in 1916 a Cosmological constant was not included. At that time the Universe was believed to be static (Hubble did not discover the Universe was expanding until 1929)\cite{cambridge}. For a static Universe, equation \ref{accfinal} requires $\rho = -3\frac{p}{c^2}$. In this case energy density or pressure would be negative which seemed highly unphysical (although it is now believed dark energy with negative pressure is causing the Universe to accelerate). In 1917 Einstein modified GR to take account for this discrepancy, introducing the cosmological constant $\Lambda$\cite{coles}.
+
+\begin{equation}
+G_{\alpha \beta} - \Lambda g_{\alpha \beta} = \frac{8\pi G}{c^4}T_{\alpha \beta}
+\end{equation}
+
+The Friedmann equations with the Cosmological constant included are shown below.
+
+\begin{equation}
+\frac{\ddot a}{a} = -\frac{4 \pi}{3}G\left(\rho + 3\frac{p}{c^2}\right) + \frac{\Lambda c^2}{3}
+\end{equation}
+
+\begin{equation}
+\left(\frac{\dot a}{a}\right)^2 = \frac{8\pi G}{3}\rho -\frac{k c^2}{a^2} + \frac{\Lambda c^2}{3}
+\end{equation}
+
+A positive value of $\Lambda$ leads to a positive pressure term which acts as a repulsive force against gravity, giving the desired static Universe Einstein was trying to find a solution for. When evidence for an expanding Universe was found by Hubble in 1929, Einstein regarded the introduction of the cosmological constant as the biggest mistake of his life. However, observations do now suggest its requirement\cite{coles}.
+
+\section{Friedmann Models}
+
+\subsection{Equation of State, Evolution of $\rho$ with $a$}
+
+The Friedmann models are based on perfect fluids as described by the energy-momentum tensor. This is a good approximation as a fluid can be treated as perfect when the mean free path is much less than the distances being considered\cite{coles}. The equation of state for a perfect fluid is shown below.
+
+\begin{equation}\label{eqnstate}
+p = w\rho c^2
+\end{equation}
+
+Where $w$ is the equation of state parameter\cite{carlo}. The continuity equation can be derived in the Newtonian limit (equation \ref{continuity}) or by using stress-energy conservation in the relativistic case. Equation \ref{eqnstate} can be used to eliminate $p$, rearranging gives the following.
+
+\begin{equation}\label{eqnstatewithcont}
+\frac{d\rho}{da} = -3\frac{\rho}{a}(1+w)
+\end{equation}
+
+From inspection it can be seen this satisfies $\rho(a) = \rho_{0}(a/a_{0})^n$. Using this, it can be found, the power the solution is raised to is related to the equation of state parameter\cite{carlo}. 
+
+\begin{equation}
+n = -3(1+w)
+\end{equation}
+
+From this the evolution of energy densities can be found for different fluids with relation to the scale factor. The "curvature density" is also included $\Omega_{k}=(8\pi G/3H^2)\rho_{k}$.
+
+\begin{center}
+\begin{tabular}{ c | c | c | c}
+  Relativistic matter & Non-Relativistic matter & $\Lambda$-type matter & Curvature\\ 
+  (radiation)& (dust) & (vacuum energy)& \\ \hline
+  $w=1/3$ & $w=0$ & $w=-1$& \\
+  $\rho_{\gamma} \sim \Omega_{\gamma} \sim a^{-4}$ & $\rho_{m} \sim \Omega_{m} \sim a^{-3}$ & $\rho_{\Lambda} \sim \Omega_{\Lambda} \sim const$ & $\rho_{k} \sim \Omega_{k} \sim a^{-2}$
+\end{tabular}
+\end{center}
+
+From these results it can be seen that the Universe evolves through different epochs. Qualitatively, near the Big Bang radiation dominates but this dies away at a quicker rate than the matter density so there is a transition as matter begins to dominate\cite{carlo}. Finally as the matter energy density decreases as the scale factor increases cosmological type matter or dark energy begins to dominate with its negative pressure, accelerating expansion.
+
+\subsection{Flat Matter Dominated Universe ($k=0$, $\Omega_{m}=1$, $\Lambda=0$)}
+
+A flat Universe ($k=0$), dominated by matter $\rho_{m} =\rho(t_{1})\frac{a(t_{1}^3)}{a(t)^3}\sim a^{-3} $ is considered. The derivation for the time dependence of the scale factor is as follows.
+
+\begin{eqnarray*}
+\left(\frac{\dot a}{a}\right)^2 &=& \frac{8\pi G}{3}\rho(t_{1})\frac{a(t_{1})^3}{a(t)^3}
+\\ a^{1/2}da &=& \sqrt{\frac{8\pi G}{3}\rho(t)a(t_{1)^3}}dt
+\\ \frac{2}{3}a^{3/2}&=&\sqrt{\frac{8\pi G}{3}\rho(t)a(t_{1)^3}}t
+\\ a &\propto& t^{\frac{2}{3}},
+\end{eqnarray*}
+
+This corresponds to an early Universe where the radiation density has diluted already. It is known as the Einstein-de Sitter Universe\cite{sam}. It is clear to see that this Universe keeps on expanding forever, but the change in the scale factor slows down as time evolves.
+
+\subsection{Flat Radiation Dominated Universe ($k=0$, $\Omega_{\gamma}=1$, $\Lambda=0$)}
+
+Going back far enough in time, to the early Universe, radiation dominated over matter ($\Omega_{\gamma}=1$). $\rho_{\gamma} \sim a^{-4}$ can be used along with the same method as for the flat Universe above to find the evolution of the scale factor.
+
+\begin{equation}
+a\propto t^{1/2}
+\end{equation}
+
+It is important to note that a radiation-dominated Universe expands more slowly than a dust dominated Universe because the pressure that radiation supplies causes the Universe to decelerate.
+
+\subsection{Empty Universe ($k=-1$, $\Omega_{m}=0$, $\Omega_{\gamma}=0$, $\Lambda = 0$)}
+
+A non-physical Universe is considered with no radiation, matter or $\Lambda$. From the Friedmann equations, it is trivial to solve.
+
+\begin{equation}
+a \propto t
+\end{equation}
+
+This solution corresponds to any open Universe with $\Lambda=0$ that has evolved into the far future so that the matter and radiation densities have decreased so much that they have become negligible\cite{pritchard}.
+
+\subsection{Closed Universe ($k=1$, $\Omega_{tot}>1$, $\Lambda=0$ )}
+
+As discussed previously, if the density is overcritical $\Omega_{tot}>1$, the Universe expands from $a=0$ at $t=0$, but there will be a time $t_{max}$ when it stops expanding ($\dot a =0$) where the scale factor is at its maximum $a=a_{max}$. The Universe then undergoes a final collapse to $a=0$ or Big Crunch\cite{manchester}. Using $\dot a =0$ at $t_{max}$ the Friedmann equation for a matter dominated Universe becomes the following.
+
+\begin{equation}
+\frac{8\pi G}{3}\rho_{0}\frac{a(t_{0})^3}{a(t)^3} =\frac{kc^2}{a(t)^2}
+\end{equation}
+
+Which rearranges to reveal $a_{max}$.
+
+\begin{equation}
+a_{max} = \frac{8\pi G}{3kc^2}\rho_{0}a_{0}^3
+\end{equation}
+
+The evolution of the Universe is symmetric around $t_{max}$ so $a=0$ at $t=0, 2t_{max}$.
+
+\subsection{Universes with $\Lambda$}
+
+The late-time evolution of a Universe is dominated by the cosmological constant. With $k=0$, the Friedmann equation reduces to the following\cite{modcosmo}.
+
+\begin{equation}
+\left(\frac{\dot a}{a}\right)^2 = \frac{\Lambda c^2}{3}
+\end{equation}
+
+This is an example of a de Sitter Universe. It can be shown, as in the derivation below, that the scale factor scales exponentially with time.
+
+\begin{eqnarray*}
+\dot a &=& \sqrt{\frac{\Lambda c^2}{3}}a
+\\ a &\propto& \exp \left(\sqrt{\Lambda /3} t\right)
+\end{eqnarray*}
+
+A de Sitter Universe can also be used as a simplification when modelling inflation.
+
+\subsection{Cosmological Horizon Problem}
+
+To define the Cosmological Horizon it is first worth introducing Conformal Time $\eta$ instead of proper time which has been discussed up until now.
+
+\begin{equation}
+\eta = \int \frac{dt}{a(t)}
+\end{equation}
+
+The Cosmological Horizon $r_{H}$ is the maximum distance light can have travelled since the Big Bang and is defined using conformal time below.
+
+\begin{equation}
+r_{H} = \eta c
+\end{equation}
+The Cosmological Horizon problem is the mystery that the Universe is homogeneous and isotropic (the CMB temperature is uniform to one part in $10^5 K$) on scales much larger than those within causal contact of each other. The question is, how can two regions of the Universe that have never been able to communicate information about their state and structure via light signals since the Big Bang, have the same physical conditions? This was one of the problems with Cosmology that lead to the development of the theory of inflation\cite{coles}.
+
+\section{Summary}
+
+A Newtonian and GR approach have both been used to derive the Friedmann equations, the time evolution of the density of different fluids and some example model Universes have been investigated. In addition mixed-models can be studied with multiple fluid contributions although their solutions are more complicated but are easily solved computationally using numerical integration. A simple example is a concordance Universe that agrees with measurements from our Universe can be created with $\Omega_{m}=0.3$, $\Omega_{\Lambda}=0.7$. Models such as these can then be used as the basis for perturbations when investigating structure formation.
+%----------------------------------------------------------------------------------------
+
+
+
+\newpage
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+  \bibitem{mukhanov} Mukhanov, Viatcheslav F. {\em Physical Foundations of Cosmology}, Cambridge University Press, 2005.
+  
+  \bibitem{pritchard} Jonathan R. Pritchard, {\em Cosmology 2013: Lecture Notes}, 2013, Imperial College
+  
+    \bibitem{cambridge} M. Pettini, {\em Physical Cosmology Lecture Notes}, Cambridge University.
+    
+           \bibitem{carlo} Carlo Contaldi, {\em Msc in Particles and Quantum Fields -
+           Particle Cosmology Course}, 2012, Imperial College
+    
+      \bibitem{coles}  Peter Coles, Francesco Lucchin {\em Cosmology - The Origin and Evolution of Cosmic Structure}, 2nd Edition, 2002, Wiley
+      
+
+
+  \bibitem{peacock} John A. Peacock, {\em Cosmological Physics}, 1999, Cambridge University Press
+
+
+  \bibitem{sam} Balša Terzić, {\em Astrophysics Lecture 5 }, Northern Illinois University, $http://www.nicadd.niu.edu/~bterzic/PHYS652/Lecture_05.pdf$
+
+  
+  %\bibitem{durrer} Ruth Durrer, {\em Gauge invariant cosmological perturbation theory: A General study and its application to the texture scenario of structure formation}, 1994
+  
+  %\bibitem{adventures} Robert J. Nemiroff, and Patla Bijunath, {\em Adventures in Friedmann cosmology: A detailed expansion of the cosmological Friedmann equations}, American Journal of Physics, 76, 2008: 265.
+  
+  %\bibitem{bert} Bertschinger, Edmund. {\em Cosmological dynamics}, arXiv preprint astro-ph/9503125 (1995).
+  
+  \bibitem{manchester} J. P. Leahy, {\em The Simplest Models of the Universe}, Cosmology Course, University of Manchester, http://www.jb.man.ac.uk/~jpl/cosmo/friedman.html
+  
+  %\bibitem{friedmann} Friedmann, Aleksandr. {\em 125. On the Curvature of Space}, Zeitschrift für Physik 10 (1922): 377-386.
+  
+  %\bibitem{peebles}Peebles, P. J. E., and Joseph Silk. {\em A cosmic book of phenomena.}, Nature 346.6281 (1990): 233-239.
+  
+  \bibitem{modcosmo} Dodelson, Scott. {\em Modern cosmology.} Access Online via Elsevier, 2003.
+  
+
+  
+
+  
+  
+
+  \end{thebibliography}
+  
+ {\Large{ \bf{Bibliography}}}
+ 
+ \begin{enumerate}
+ \item Robert J. Nemiroff, and Patla Bijunath, {\em Adventures in Friedmann cosmology: A detailed expansion of the cosmological Friedmann equations}, American Journal of Physics, 76, 2008: 265.
+ 
+ \item Bertschinger, Edmund. {\em Cosmological dynamics}, arXiv preprint astro-ph/9503125 (1995)
+ 
+ \item Friedmann, Aleksandr. {\em 125. On the Curvature of Space}, Zeitschrift für Physik 10 (1922): 377-386.
+ 
+ \item Peebles, P. J. E., and Joseph Silk. {\em A cosmic book of phenomena.}, Nature 346.6281 (1990): 233-239.
+ \end{enumerate}
+ 
+
+  
+ {\Large{ \bf{Word Count}}}\\
+ 
+ 2473 (TeXcount)
+%----------------------------------------------------------------------------------------
+
+\end{document}
